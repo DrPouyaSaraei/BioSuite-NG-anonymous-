@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use BioSuite-NG in your research, please cite it as below."
+title: "BioSuite-NG: An Open-Source Reimplementation of a Radiobiological Treatment-Optimization Tool with Curated TCP/NTCP Parameter Banks"
+type: software
+authors:
+  - family-names: "Saraei"
+    given-names: "Pouya"
+    affiliation: "Department of Medical Physics, Ahvaz Jundishapur University of Medical Sciences, Ahvaz, Iran"
+repository-code: "https://github.com/REPLACE_WITH_ACTUAL_GITHUB_URL/BioSuite-NG"
+license: MIT
+version: "1.0.0"
+date-released: "2026-08-19"
+keywords:
+  - radiobiology
+  - radiotherapy
+  - NTCP
+  - TCP
+  - Lyman-Kutcher-Burman
+  - treatment planning
+  - medical physics
+preferred-citation:
+  type: article
+  title: "BioSuite-NG: An Open-Source Reimplementation of a Radiobiological Treatment-Optimization Tool with Curated TCP/NTCP Parameter Banks"
+  authors:
+    - family-names: "Saraei"
+      given-names: "Pouya"
+  journal: "International Journal of Radiation Oncology, Biology, Physics"
+  year: 2026
+  status: "in preparation"
+references:
+  - type: article
+    title: "Radiobiologically guided optimisation of the prescription dose and fractionation scheme in radiotherapy using BioSuite"
+    authors:
+      - family-names: "Uzan"
+        given-names: "Julien"
+      - family-names: "Nahum"
+        given-names: "Alan E."
+    journal: "The British Journal of Radiology"
+    year: 2012
+    volume: 85
+    issue: 1017
+    start: 1279
+    end: 1286
+    doi: "10.1259/bjr/20476567"
