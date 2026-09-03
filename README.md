@@ -153,7 +153,7 @@ side by side.
 
 ## Acknowledgements
 
-BioSuite-NG was developed by **Dr. Pouya Saraei**, Department of Medical
+BioSuite-NG was developed by **(To keep the author's name anonymous for the reviewers, the researcher's name has been removed in this version.)**, Department of Medical
 Physics, Ahvaz Jundishapur University of Medical Sciences, building on the
 radiobiological modelling framework and validated methodology originally
 described by Julien Uzan and Alan E. Nahum (Clatterbridge Cancer Centre)
