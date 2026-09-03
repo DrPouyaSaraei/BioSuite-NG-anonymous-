@@ -14,10 +14,7 @@ doi:10.1259/bjr/20476567
 
 ## DISCLAIMER
 
-This program is **not destined for clinical use**. Neither the developer
-nor Ahvaz Jundishapur University of Medical Sciences (AJUMS) can be held
-responsible for any issue arising from using this software for the
-treatment of patients. The final clinical decision always lies with the
+This program is **not destined for clinical use**. The final clinical decision always lies with the
 clinician in charge of the case.
 
 ## Status
