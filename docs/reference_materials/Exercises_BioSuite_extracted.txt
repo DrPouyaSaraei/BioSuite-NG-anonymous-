@@ -1,0 +1,167 @@
+BIOSUITE EXERCISES SHEET
+
+This document will guide you step by step into how to use BioSuite to optimise treatment plans using radiobiology through simple exercises replicating real-life situations. 
+BioSuite includes several normal and tumour tissue dose response models. It takes DVHs as input and computes the best combination of number of fractions and fraction size to achieve the highest TCP without exceeding NTCP constraints set by the operator. 
+The exercises will use a set of pre-installed DVHs for a few patients. 
+This program's developer will be present in the room as you progress through the steps. Don't hesitate to ask questions. 
+
+Because BioSuite is still in constant development, some features are disabled and bugs may occur. Here again, don't hesitate to ask for assistance. 
+
+To start BioSuite, double-click the shortcut on the desktop. A disclaimer appears; click "ok" to reach the program main window. 
+
+    1- Editing endpoints
+
+To familiarise yourself with BioSuite, a good start is to take a look at the existing models and the parameters used for them. 
+BioSuite can perform biological evaluation of a DVH using the following models: 
+
+    - Lyman Kutcher Burman NTCP
+    - Relative seriality NTCP
+    - Simple Maximum dose NTCP
+    - LQ Poisson including repopulation TCP (repopulation can be switched off)
+
+Click on the "Endpoints" tab. By rolling down the "Endpoint" top scroll down menu, a list of preloaded endpoints can be found. Select "Lung OAR". Automatically, text boxes will appear underneath, each containing a parameter required for the model. The values there can be modified by simply typing new ones and confirming the change by pressing Enter after each modification. Note that the scroll down menu immediately below the endpoint is also updated to show what model is used to describe this endpoint (LKB in this case). 
+
+
+Exercise 1: Create a new "lung perforation" endpoint
+
+Click on "Add new endpoint" -  an input box appears. Type in the name of the endpoint, then press enter. 
+A message box reminds you to fill in the parameters for this newly created endpoint. Click ok. 
+As in ex.1, select the "OAR/maximum dose" model to describe this endpoint. 
+Fill in 8200cGy for the "Limit" parameter, then press enter. 
+Fill in 2 in the "?/?" parameter box, then press enter. 
+
+Exercise 2: Save the endpoint list and make it the default one
+
+In the main menu, click on "File" and select "Make this endpoint list the default one". A save dialogue opens. Pick desktop as the save destination and call the endpoint list "MyList".
+
+Next time BioSuite starts, your modified endpoint list will be loaded as the default one. 
+
+    2- Creating a new plan
+
+BioSuite is a DVH-based radiobiological optimisation software. In BioSuite, DVHs belong to a plan. A plan is defined by a name, a nominal prescription dose and a fractionation scheme. The latter is composed of the total number of fractions, number of fractions per day and number of treatment days in a week. Together, these parameters allow BioSuite to compute the treatment duration. The number of fractions/fraction size is a crucial parameter for any radiobiological evaluation of a DVH. 
+
+Exercise 3: Create a new plan
+
+Click on the plan tab
+Enter a name of your choice
+Click "Add plan"
+Several message boxes will inform you that some parameters were assigned (unrealistic) default values. 
+
+Exercise 4: Modify a plan
+
+In the plan list, select the plan you just created by clicking it. Note at the top that it is now the current plan. 
+Note that the boxes have been filled with the plan parameters
+Modify those values as follows: 20 fractions, leave prescription dose at 5500cGy, 6 fractions per week. 
+Click on "Modify". Note how the values in the plans list are now updated, especially the treatment duration. 
+
+    3- Loading DVHs
+
+DVHs imported into BioSuite must conform to format requirements. DVHs from Pinnacle are readily readable. All DVHs belonging to a given treatment plan must be loaded in the same plan. 
+
+Exercise 5: Load DVHs into a plan
+
+Click on the "DVHs" tab. 
+Click on "Load DVH". An open file dialog appears. Select one or several DVHs belonging to patient 1 (or 2) then click "open".
+DVHs are loaded and processed. Note in the DVH list the various items of information about the loaded DVHs (volume, max dose etc.)
+
+At this point, BioSuite still can't perform biological evaluation of the DVHs because they are not associated with an endpoint. It is the combination of plan parameters + model parameters + DVH data that makes biological evaluation possible. 
+
+Exercise 6: Associate DVHs with endpoints
+
+Choose the normal lung DVH from the DVH list. 
+Click on the drop down endpoint menu above the DVH list and select "Lung radiation pneumonitis". 
+Click "Associate to DVH(s)". Note how the DVH list is updated with information regarding the model used to describe this DVH. 
+Repeat the previous instructions for the other DVHs using the relevant endpoints
+
+Once this step has been completed, you can go to the "DVH plot(s)" tab and check what TCP and NTCP values are for all endpoint-associated DVHs by simply selecting one of them in the list. Any change to the model parameters will update the relevant value next time you select a DVH in the list. Note that the "maximum dose" model can only give NTCPs of 0% (zero) or 100%. 
+
+Exercise 7: Change the model used to describe radiation pneumonitis of the normal lung from LKB to relative seriality. 
+
+Select "Lung radiation pneumonitis" in the endpoint list. 
+In the scroll down menu just below, click and select "OAR/Relative seriality". 
+Note how the parameters fields below have changed to include the relevant ones now. Some values are automatically transferred from the previous model but they're incorrect. We'll now update those values. 
+In the TD50 box, leave the current value, there's no reason for TD50 to change from one model to the other since they represent the same value in reality
+In the gamma box, type in 0.75 then enter. 
+In the s (seriality) box, type in 0.0061 then enter
+An ?/? value of 3 is fine. Change it if you want to. 
+Note how the NTCP value is close to the value you had using the LKB model. Adjust TD50 so as to get exactly the same NTCP as before. 
+
+    4- Display curves
+
+Displayable curves in BioSuite are the DVHs in cumulative or differential format, normalised or not (normalisation applies to all the DVHs in a plan). BioSuite can also display dose-response curves (DRCs) for constant fraction size and constant fraction number. Finally, isotoxic optimisation curves are displayed as the optimisation progresses. 
+
+Exercise 8: Display normalised DVHs for the current plan
+
+Click on the "DVH plots" tab
+In the list box at the bottom, tick the boxes to activate the display of the corresponding DVH. Note how the DVH of the GTV is hardly visible because of the small size of this volume. A DVH with a ticked box is "active". 
+Select all lines in the list box then click on "cumulative" at the right. 
+Click on "normalise" just above. Note that the curve display is now readable. 
+Spot the yellow DVH curve; find the DVH it belongs to. Left click on that DVH in the list then right click to make a menu pop up. In this menu, click on "change colour for that DVH" and select a more visible colour. 
+You can also adjust the thickness of each curve individually. 
+
+Critical organ DVHs displayed in a TPS are usually not transformed into their 2Gy equivalent. It can be interesting to see the effect of applying this transformation on a DVH. 
+
+Exercise 9: Apply the 2Gy equivalent transformation to a critical organ DVH
+
+In the list box, select a tumour DVH by left clicking it. Note how the "display LQ correction" options are disabled. This option is only available for critical organs. 
+Select a critical organ DVH. 
+Click on the "display LQ correction" option. Note how the new DVH (different colour) has changed. It is more stretched towards low dose for dose bins getting less than 2Gy per fraction and towards high doses for dose bins getting more than 2Gy per fraction. When computing NTCP, these data are used unless you click the "don't correct for fractionation" box. 
+
+A case can be evaluated by looking at the DRCs. A dose-response curve shows how NTCP and TCP change as dose increases. Because dose can be changed by giving fewer or more fractions (extending treatment length) or by decreasing/increasing the fraction size, DRCs can be created for either case. DRCs are only created for active DVHs. 
+
+Exercise 10: Generate some DRCs for constant fraction number
+
+Make sure that in the DVH plots tab, at least one DVH is ticked in the list
+Return to the "Dose response curves" tab
+Select the constant fraction number option at the left
+Click on "Compute curves" on the right. The DRC appears in the graph above. Note that the X-axis has double-labelling. The top axis is in dose, the bottom one shows the dose-multiplying factor (1.0 = dose entered when the plan was created). 
+Above the "Compute curves" button, move the slider around. Note how the caption just above changes to show the corresponding total dose and dose multiplying factor. Moving the slider also moves a vertical bar on the graph and shows in the list box below the value of the biological evaluation for this particular total dose/dose multiplication factor. 
+
+A DRC at constant fraction size will be discrete as fraction number is a whole number. Keep in mind that adding a fraction extends the overall treatment duration, allowing more repopulation to take place. Smaller fractions also yield less "beta" kill and vice-versa. 
+
+Exercise 11: Generate some DRCs for constant fraction size
+
+Make sure that you have at least critical organ and tumour DVHs active. 
+Choose the constant fraction size option
+Compute the curves. Note that the curve is now discrete. The slider will also move the vertical bar but now refers to a number of fractions and the resulting total dose. Biological evaluation given in the DVH list is updated accordingly. 
+In a similar way to the DVHs, change the colour and thickness of the DRCs by selecting a DVH from the list at the bottom then right-clicking it to make the menu appear. 
+The menu in the left bottom corner allows you to display only one type of curve (TCP or NTCP) at a time or both. 
+
+
+    5- Optimise a plan
+
+Optimising a plan is similar to inverting a DRC. Instead of having the operator browse the curve and then stop where the complication risk becomes unacceptable to read the corresponding dose, she/he will set one or more complication risk thresholds and let BioSuite figure out the fraction size/number of fractions corresponding to the most restrictive threshold. 
+
+Exercise 12: Find the dose corresponding to a 10% risk of radiation pneumonitis 
+
+Make sure that only the PTV and the normal lung DVHs are active
+Click on the "Optimisation" tab. Note that in the list box, the active DVHs are present and that no limit is set for any of them. 
+Right-click the normal lung DVH in the list and a popup menu will appear. Select the "Set limit for this DVH" option. An input box appears. Type in "10" and press enter. Note that the list box is updated with this value now. It is not possible to set a limit for a tumour as we normally want TCP as high as possible (Cf. paragraph before next exercise). 
+In the main menu at the top, click on "radiobiology". Choose the first option "Start optimisation for constant fraction number". A message box will pop up informing you of the outcome of the optimisation. Note that the summary shows indeed that for this particular dose, the 10% limit is reached. 
+Close this message box; another box will ask you if you want to apply these modifications to the plan. Answering yes will modify the prescription dose value that you set when you created the plan but will keep the fraction number unchanged. Answer "no".  
+Now in the same menu, choose the 2nd option "Start optimisation for constant fraction size". Note how the outcome is different (the resulting  TCP is lower). 
+
+Optimising on only one of the parameters, i.e. (total) dose at constant fraction number or number of fractions at constant fracton size, may be unnecessarily restrictive. Depending on the endpoints considered and their respective ?/? values, the best attainable TCP may be for a particular combination of the fraction size and fraction number. To find the best combination, you can use the "2D" iso-toxic optimisation strategy of BioSuite. It will explore a fraction number range to find the combination of fraction size and number of fractions yielding the highest TCP. The outcome of this optimisation appears as a curve (TCP vs fraction number) so that this optimisation is not only a clinical tool but also an educational one about the intricate mathematics of radiobiology. A TCP "overshoot" limit can also be set to make sure that in extremely favourable cases, the dose won't be escalated unnecessarily as TCP is already very high and increasing asymptotically. 
+
+Exercise 13: Perform a 2D isotoxic optimisation
+
+Change the limit for normal lung to 8%.
+At the bottom left corner, click on "Change fraction range". Two input boxes will pop-up successively. Type in 1 for the lower range limit and 30 for the upper one. 
+Change the overshoot limit to 98% TCP. This keeps the optimiser from recommending a dose resulting in a TCP of more than 98%. 
+From the radiobiology menu, choose the 3rd option "Start isotoxic optimisation". Note that a curve appears in the graph. This curve shows for each fraction number on the x-axis the best TCP (y-axis). For all these points, NTCP is equal to the limit set.  
+Click on a point in the graph. A message box gives you the data for this particular point (fraction number, total dose, TCP). 
+Pick out the highest TCP value. Check the details of this point. Verify that they correspond to the best values mentioned in the bottom right corner. 
+
+Exercise 14: Perform a 2D isotoxic optimisation on a plan including a serial endpoint
+
+Create a new plan for a prostate patient receiving 72Gy in 36 fractions.
+Load the corresponding DVHs.
+Associate those DVHs with the relevant endpoints. Note that for a prostate tumour, the repopulation constant is assumed to be zero, meaning that no repopulation occurs during the duration of the treatment (e.g. 6 weeks). You can later modify this value to one of your choice. 
+Set a limit of 5% for "rectal bleeding"
+Extend the fraction number range from 1 to 50
+Start isotoxic optimisation. Note the characteristic shape of the curve. The presence of a serial endpoint prevents the optimiser from escalating the dose for a small number of fractions. Also note that in the absence of repopulation, a long treatment eventually leads to a TCP approaching 100%. 
+
+Having gone through all these steps, you can now use and explore BioSuite and its possibilities. 
+
+
+Julien Uzan, PhD. Developer of BioSuite

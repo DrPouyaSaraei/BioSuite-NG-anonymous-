@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Lung (radiation pneumonitis, grade>2 SWOG)",
+    "kind": "NTCP",
+    "model": "LKB",
+    "alpha_beta": 3.0,
+    "params": {"td50": 2920.0, "m": 0.45, "n": 1.0, "alpha_beta": 3.0}
+  },
+  {
+    "name": "Rectum (grade>=2 bleeding)",
+    "kind": "NTCP",
+    "model": "LKB",
+    "alpha_beta": 3.0,
+    "params": {"td50": 9770.0, "m": 0.27, "n": 0.085, "alpha_beta": 3.0}
+  },
+  {
+    "name": "Oesophagus (oesophagitis, fibrosis, stricture)",
+    "kind": "NTCP",
+    "model": "SMD",
+    "alpha_beta": 1.7,
+    "params": {"d_lim": 7200.0, "alpha_beta": 1.7}
+  }
+]
