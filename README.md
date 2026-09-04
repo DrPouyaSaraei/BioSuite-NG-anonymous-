@@ -5,9 +5,8 @@ Radiol* 2012;85:1279-1286) -- a radiobiological treatment-optimisation tool
 computing NTCP/TCP and suggesting optimal prescription dose / fractionation.
 For more detailed information, please refer to the *BioSuite-NG User Manual*.
 
-**Developed by:** Dr. Pouya Saraei (Saraei P.)
-**Affiliation:** Department of Medical Physics, Ahvaz Jundishapur University
-of Medical Sciences, Iran.
+**Developed by:** To keep the author's name anonymous for the reviewers, the researcher's name has been removed in this version.
+
 **Based on the original methodology of:** Uzan J, Nahum AE. *Radiobiologically
 guided optimisation of the prescription dose and fractionation scheme in
 radiotherapy using BioSuite.* Br J Radiol. 2012;85:1279-1286.
@@ -16,7 +15,7 @@ doi:10.1259/bjr/20476567
 ## DISCLAIMER
 
 This program is **not destined for clinical use**. Neither the developer
-nor Ahvaz Jundishapur University of Medical Sciences (AJUMS) can be held
+nor xxxx University of Medical Sciences (xxxx) can be held
 responsible for any issue arising from using this software for the
 treatment of patients. The final clinical decision always lies with the
 clinician in charge of the case.
@@ -154,8 +153,7 @@ side by side.
 
 ## Acknowledgements
 
-BioSuite-NG was developed by **Dr. Pouya Saraei**, Department of Medical
-Physics, Ahvaz Jundishapur University of Medical Sciences, building on the
+BioSuite-NG was developed by **To keep the author's name anonymous for the reviewers, the researcher's name has been removed in this version.**, building on the
 radiobiological modelling framework and validated methodology originally
 described by Julien Uzan and Alan E. Nahum (Clatterbridge Cancer Centre)
 in their 2012 paper introducing BioSuite. The TCP/NTCP model
